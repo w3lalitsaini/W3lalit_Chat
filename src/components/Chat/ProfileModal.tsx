@@ -15,7 +15,7 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
   onClose,
   user,
 }) => {
-  const { setUser } = useAuth();
+  const { updateUser } = useAuth();
   const [formData, setFormData] = useState({
     fullName: user.fullName || "",
     bio: user.bio || "",
@@ -35,8 +35,9 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
 
     try {
       const response = await userAPI.updateProfile(formData);
-      setUser(response.data.user);
+      updateUser(response.data.user);
       setSuccess(true);
+
       setTimeout(() => {
         onClose();
         setSuccess(false);

@@ -1,5 +1,6 @@
 import React from "react";
-import { X, Bell, Shield, Moon, Palette, Trash2, LogOut } from "lucide-react";
+import { X, Bell, Shield, Palette, Trash2, LogOut } from "lucide-react";
+
 import { useTheme } from "../../context/ThemeContext";
 import { useAuth } from "../../context/AuthContext";
 
